@@ -1,0 +1,48 @@
+{
+  "name": "GitHub Lead Clipper",
+  "description": "Saves Leads from GitHub",
+  "homepage_url": "https://github.com/codeScourge/github-lead-clipper",
+  "version": "7.7.7",
+  "manifest_version": 3,
+  "permissions": [
+    "storage", 
+    "tabs"
+  ],
+  "host_permissions": ["https://github.com/*"],
+
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*"],
+      "js": ["contentScript.js"]
+    }
+  ],
+
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/index.css"
+      ],
+      "matches": ["https://github.com/*"]
+    }
+  ],
+
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_title": "GitHub Lead Clipper",
+    "default_popup": "popup/popup.html"
+  }
+}
